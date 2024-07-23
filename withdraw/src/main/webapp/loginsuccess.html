@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .success-message {
+            display: none;
+            color: green;
+            margin-bottom: 20px;
+        }
+        @keyframes blink {
+            50% { background-color: rgb(0, 255, 0); }
+        }
+    </style>
+    <script>
+        function showSuccessMessage() {
+            var successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            document.body.style.animation = 'blink 1s';
+            setTimeout(function() {
+                document.body.style.animation = '';
+            }, 500);
+        }
+        window.onload = showSuccessMessage;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome Admin</h1>
+        <div id="success-message" class="success-message">Login Successfully</div>
+        <button class="button" onclick="location.href='register.jsp'">Customer Registration</button>
+        <button class="button" onclick="location.href='login.jsp'">Customer Login</button>
+        <button class="button" onclick="location.href='customerDetails.jsp'">Customer Details</button>
+        <button class="button" onclick="location.href='AdminLogin.html'">Back to Admin Login</button>
+    </div>
+</body>
+</html>
